@@ -1,0 +1,249 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #b0b0a8;
+        }
+
+        /* 📱 موبائل فریم */
+        .mobile {
+            width: 350px;
+            height: 700px;
+            background: #111;
+            border-radius: 40px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 🔘 نوچ */
+        .notch {
+            width: 150px;
+            height: 30px;
+            background: black;
+            border-radius: 15px;
+            position: absolute;
+            top: 10px;
+        }
+
+        /* 🌗 لائٹ/ڈارک موڈ بٹن */
+        .toggle {
+            position: absolute;
+            top: 50px;
+            right: 30px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        /* 📟 کیلکولیٹر */
+        .calculator {
+            width: 90%;
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+            background-color: #f7f5f0;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            bottom: 30px;
+        }
+
+        .dark-mode {
+            background-color: #222;
+            color: #f7f5f0;
+        }
+
+        /* 🖥️ ڈسپلے */
+        .display {
+            font-size: 50px;
+            padding: 15px;
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: right;
+            outline: none;
+            font-weight: bold;
+            color: black;
+        }
+
+        .dark-mode .display {
+            color: white;
+        }
+
+        /* 🔢 کیلکولیٹر بٹنز */
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 20px;
+            font-size: 22px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        button:active {
+            transform: scale(0.9);
+        }
+
+        .dark-mode button {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        /* 🟡 اسپیشل بٹنز */
+        .equal {
+            background: #ffac2f;
+            color: white;
+        }
+
+        .dark-mode .equal {
+            background: #ffac2f;
+        }
+
+        .clear {
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="mobile">
+        <div class="notch"></div>
+        <button class="toggle">🌙</button>
+
+        <div class="calculator">
+            <input type="text" class="display" id="display" disabled>
+            <div class="buttons">
+                <button class="clear" onclick="clearDisplay()">C</button>
+                <button onclick="addToDisplay('%')">%</button>
+                <button onclick="addToDisplay('/')">÷</button>
+                <button onclick="addToDisplay('*')">×</button>
+
+                <button onclick="addToDisplay('7')">7</button>
+                <button onclick="addToDisplay('8')">8</button>
+                <button onclick="addToDisplay('9')">9</button>
+                <button onclick="addToDisplay('-')">−</button>
+
+                <button onclick="addToDisplay('4')">4</button>
+                <button onclick="addToDisplay('5')">5</button>
+                <button onclick="addToDisplay('6')">6</button>
+                <button onclick="addToDisplay('+')">+</button>
+
+                <button onclick="addToDisplay('1')">1</button>
+                <button onclick="addToDisplay('2')">2</button>
+                <button onclick="addToDisplay('3')">3</button>
+                <button class="equal" onclick="calculateResult()">=</button>
+
+                <button onclick="addToDisplay('0')" style="grid-column: span 2;">0</button>
+                <button onclick="addToDisplay('.')">.</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function addToDisplay(value) {
+            document.getElementById("display").value += value;
+        }
+
+        function clearDisplay() {
+            document.getElementById("display").value = "";
+        }
+
+        function calculateResult() {
+            try {
+                document.getElementById("display").value = eval(document.getElementById("display").value);
+            } catch {
+                document.getElementById("display").value = "Error";
+            }
+        }
+
+        document.querySelector('.toggle').addEventListener('click', function() {
+            document.querySelector('.calculator').classList.toggle('dark-mode');
+            this.textContent = this.textContent === '🌙' ? '☀️' : '🌙';
+        });
+    </script>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="website icon" type="png"
+        href="data:image/png;base64,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">
+    <title>Full Stack Calculator</title>
+</head>
+
+<body>
+    <div class="Full-Calculator">
+        <input type="text" id="Input-Calculator" placeholder="0">
+        <div>
+            <button id="Operator" onclick="clearDisplay()">AC</button>
+            <button id="Operator" onclick="DeletOneItemToDisplay()">DEL</button>
+            <button id="Operator" onclick="appendOperator('%')">%</button>
+            <button id="Operator" onclick="appendOperator('/')"><i class="fa-solid fa-divide"></i></button>
+        </div>
+        <div>
+            <button onclick="appendNumber(7)">7</button>
+            <button onclick="appendNumber(8)">8</button>
+            <button onclick="appendNumber(9)">9</button>
+            <button id="Operator" onclick="appendOperator('x')">x</button>
+        </div>
+        <div>
+            <button onclick="appendNumber(4)">4</button>
+            <button onclick="appendNumber(5)">5</button>
+            <button onclick="appendNumber(6)">6</button>
+            <button id="Operator" onclick="appendOperator('-')">-</button>
+        </div>
+        <div>
+            <button onclick="appendNumber(1)">1</button>
+            <button onclick="appendNumber(2)">2</button>
+            <button onclick="appendNumber(3)">3</button>
+            <button id="Operator" onclick="appendOperator('+')">+</button>
+        </div>
+        <div>
+            <button onclick="appendNumber('00')">00</button>
+            <button onclick="appendNumber(0)">0</button>
+            <button id="Operator" onclick="appendOperator('.')">.</button>
+            <button id="EqualBtn" onclick="">=</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
