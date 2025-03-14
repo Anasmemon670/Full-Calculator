@@ -3,11 +3,12 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    transition: 0.5s;
 }
 
 body {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,10 +17,54 @@ body {
 
 .Full-Calculator {
     border: solid 1px #717377;
-    background: transparent;
+    background: black;
     border-radius: 16px;
     padding: 20px;
     box-shadow: 0px 3px 15px rgba(113, 115, 119, 0.5);
+    margin: 0 auto;
+    padding: 2em;
+    position: relative;
+    width: 400px;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.Full-Calculator::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: red;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    padding: 4px;
+    z-index: -1;
+    border-radius: 16px;
+    background-image: conic-gradient(from var(--angle), transparent 70%, blue);
+    animation: 3s spin linear infinite;
+
+
+}
+
+.Full-Calculator::before {
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+
+    to {
+        --angle: 360deg;
+    }
+
 }
 
 input {
@@ -34,12 +79,14 @@ input {
     cursor: pointer;
     color: #FFFFFF;
     outline: none;
+    /* -ms-hyphenate-limit-lines: calc(8+) ; */
 }
-input::placeholder{
+
+input::placeholder {
     color: #FFFFFF;
 }
 
-button{
+button {
     width: 60px;
     height: 60px;
     margin: 10px;
@@ -51,9 +98,51 @@ button{
     box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1);
     cursor: pointer;
 }
-#EqualBtn{
+
+#EqualBtn {
     background: #fb7c14;
 }
-#Operator{
+
+#Operator {
     color: #6dee0a;
 }
+
+/* .container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.bubbles{
+    position: relative;
+    display: flex;
+}
+.bubbles span {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #4fc4dc;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44, 
+    0 0 50px #4fc4dc,
+    0 0 100px #4fc4dc;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+
+.bubbles span:nth-child(even){
+    background: #ff2d75;
+    box-shadow: 0 0 0 10px #ff2d7544, 
+    0 0 50px #ff2d75,
+    0 0 100px #ff2d75;
+
+}
+@keyframes animate{
+    0%{
+        transform: translateY(100vh) scale(0);
+    }
+    100%{
+        transform: translateY(-10vh)  scale(1);
+    }
+} */

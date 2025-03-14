@@ -1,198 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Calculator</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: sans-serif;
-        }
-
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: #b0b0a8;
-        }
-
-        /* 📱 موبائل فریم */
-        .mobile {
-            width: 350px;
-            height: 700px;
-            background: #111;
-            border-radius: 40px;
-            padding: 20px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* 🔘 نوچ */
-        .notch {
-            width: 150px;
-            height: 30px;
-            background: black;
-            border-radius: 15px;
-            position: absolute;
-            top: 10px;
-        }
-
-        /* 🌗 لائٹ/ڈارک موڈ بٹن */
-        .toggle {
-            position: absolute;
-            top: 50px;
-            right: 30px;
-            background: none;
-            border: none;
-            font-size: 20px;
-            cursor: pointer;
-            color: #fff;
-        }
-
-        /* 📟 کیلکولیٹر */
-        .calculator {
-            width: 90%;
-            padding: 20px;
-            border-radius: 20px;
-            text-align: center;
-            background-color: #f7f5f0;
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
-            position: absolute;
-            bottom: 30px;
-        }
-
-        .dark-mode {
-            background-color: #222;
-            color: #f7f5f0;
-        }
-
-        /* 🖥️ ڈسپلے */
-        .display {
-            font-size: 50px;
-            padding: 15px;
-            background: none;
-            border: none;
-            width: 100%;
-            text-align: right;
-            outline: none;
-            font-weight: bold;
-            color: black;
-        }
-
-        .dark-mode .display {
-            color: white;
-        }
-
-        /* 🔢 کیلکولیٹر بٹنز */
-        .buttons {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        button {
-            padding: 20px;
-            font-size: 22px;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            background: rgba(0, 0, 0, 0.1);
-            transition: 0.3s;
-        }
-
-        button:active {
-            transform: scale(0.9);
-        }
-
-        .dark-mode button {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-        }
-
-        /* 🟡 اسپیشل بٹنز */
-        .equal {
-            background: #ffac2f;
-            color: white;
-        }
-
-        .dark-mode .equal {
-            background: #ffac2f;
-        }
-
-        .clear {
-            color: red;
-        }
-
-    </style>
-</head>
-<body>
-
-    <div class="mobile">
-        <div class="notch"></div>
-        <button class="toggle">🌙</button>
-
-        <div class="calculator">
-            <input type="text" class="display" id="display" disabled>
-            <div class="buttons">
-                <button class="clear" onclick="clearDisplay()">C</button>
-                <button onclick="addToDisplay('%')">%</button>
-                <button onclick="addToDisplay('/')">÷</button>
-                <button onclick="addToDisplay('*')">×</button>
-
-                <button onclick="addToDisplay('7')">7</button>
-                <button onclick="addToDisplay('8')">8</button>
-                <button onclick="addToDisplay('9')">9</button>
-                <button onclick="addToDisplay('-')">−</button>
-
-                <button onclick="addToDisplay('4')">4</button>
-                <button onclick="addToDisplay('5')">5</button>
-                <button onclick="addToDisplay('6')">6</button>
-                <button onclick="addToDisplay('+')">+</button>
-
-                <button onclick="addToDisplay('1')">1</button>
-                <button onclick="addToDisplay('2')">2</button>
-                <button onclick="addToDisplay('3')">3</button>
-                <button class="equal" onclick="calculateResult()">=</button>
-
-                <button onclick="addToDisplay('0')" style="grid-column: span 2;">0</button>
-                <button onclick="addToDisplay('.')">.</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function addToDisplay(value) {
-            document.getElementById("display").value += value;
-        }
-
-        function clearDisplay() {
-            document.getElementById("display").value = "";
-        }
-
-        function calculateResult() {
-            try {
-                document.getElementById("display").value = eval(document.getElementById("display").value);
-            } catch {
-                document.getElementById("display").value = "Error";
-            }
-        }
-
-        document.querySelector('.toggle').addEventListener('click', function() {
-            document.querySelector('.calculator').classList.toggle('dark-mode');
-            this.textContent = this.textContent === '🌙' ? '☀️' : '🌙';
-        });
-    </script>
-
-</body>
-</html> -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -221,7 +26,7 @@
             <button onclick="appendNumber(7)">7</button>
             <button onclick="appendNumber(8)">8</button>
             <button onclick="appendNumber(9)">9</button>
-            <button id="Operator" onclick="appendOperator('x')">x</button>
+            <button id="Operator" onclick="appendOperator('*')">x</button>
         </div>
         <div>
             <button onclick="appendNumber(4)">4</button>
@@ -239,10 +44,9 @@
             <button onclick="appendNumber('00')">00</button>
             <button onclick="appendNumber(0)">0</button>
             <button id="Operator" onclick="appendOperator('.')">.</button>
-            <button id="EqualBtn" onclick="">=</button>
+            <button id="EqualBtn" onclick="CalculateFinalResult()">=</button>
         </div>
     </div>
-
     <script src="app.js"></script>
 </body>
 
